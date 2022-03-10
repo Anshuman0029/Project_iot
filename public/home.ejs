@@ -1,0 +1,9 @@
+<% if (!user) { %>
+	<script>window.location.href="/login"</script>
+
+	<p >Welcome! Please <a href="/login">log in</a>.</p>
+<% } else { %>
+	<script>window.location.href="/welcome"</script>
+	<!-- <p>Hello, <%= user.username %>. View your <a href="/activity1">profile</a>.</p> -->
+	 
+<% } %>

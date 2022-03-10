@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"> </script>
+    </head>
+    <body>
+        <canvas id="myChart" height="100vh"></canvas>
+      <script>
+            const ctx = document.getElementById('myChart').getContext('2d');
+            var xValues = ['15 Feb','16 Feb','17 Feb', '18 Feb','19 Feb','20 Feb','21 Feb','22 Feb','23 Feb','24 Feb','25 Feb','26 Feb','27 Feb','28 Feb','01 Mar','02 Mar'];
+            var yValues = [ 15.5,15.2,15.8,15.9,16.3,15.1,15.1,18.5,19.8,17.6,16.6,13.3,14.7,15.2,16.7,17.7];
+            new Chart("myChart", {
+            type: "line",
+            data: {
+                labels: xValues,
+                datasets: [{
+                fill: false,
+                lineTension: 0,
+                backgroundColor: "rgba(0,0,255,1.0)",
+                borderColor: "rgba(0,0,255,0.1)",
+                data: yValues
+                }]
+            },
+            options: {
+                legend: {display: false},
+                scales: {
+                
+                xAxes: [{ticks: {min: 2, max:16},scaleLabel:{
+                  display:true,labelString:'Date',fontSize:25,
+                }}],
+                yAxes: [{ticks: {min: 0, max:25},scaleLabel:{
+                  display:true,labelString:'Temperature  (in Celsius)',fontSize:25,
+                }}]
+                },
+                title:{
+                  display:true,
+                  text:'Average Temperature in Chandigarh, India from 15 Feb to 2 Mar 2022',
+                   fontSize:35,
+                   padding:40,
+                  
+                }
+
+            }
+            });
+   </script>
+    </body>
+    
+</html>
